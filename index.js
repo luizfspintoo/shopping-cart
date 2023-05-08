@@ -54,8 +54,12 @@ function addItemList(item) {
   shoppingList.appendChild(newItem)
 
   newItem.addEventListener("dblclick", function(){
-    let itemExactInDB = ref(database, `shoppingList/${itemID}`)
-      remove(itemExactInDB)
+    if(confirm("Deseja excluir este produto?") == true){
+      alert("Item excluido com sucesso!")
+      let itemExactInDB = ref(database, `shoppingList/${itemID}`)
+        remove(itemExactInDB)
+        
+    }
     //console.log(itemID)
   })
 }
