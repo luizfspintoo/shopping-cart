@@ -16,19 +16,23 @@ let shoppingList = document.getElementById("shopping-list") //Minha lista de ite
 
 addButtonField.addEventListener("click", function(){
   let inputValue = inputFieldEl.value
-  push(shoppingInDB, inputValue) //insert
-  addItemList(inputValue)
+  //Insere um item na minha lista e no DB
+  push(shoppingInDB, inputValue) 
   clear()
 })
 
-//Update realtime
+//Atualiza Lista - Lista todos meus itens do DB através do array com loop
 onValue(shoppingInDB, function(snaphot){
-  let itemsListDB = Object.values(snaphot.val())
-
-  // for(let i = 0; i < itemsListDB.length; i++){
-  //   //console.log(itemsListDB[i])
-  // }
+  let itemsArray = Object.values(snaphot.val())
+    clearList()
+    for(let i = 0; i < itemsArray.length; i++){
+      addItemList(itemsArray[i])
+    }
 })
+
+function clearList(){
+  shoppingList.innerHTML = ""
+}
 
 function clear(){
   inputFieldEl.value = ""
