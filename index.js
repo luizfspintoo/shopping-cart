@@ -61,12 +61,3 @@ function addItemList(item) {
     }
   })
 }
-
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", function() {
-    navigator.serviceWorker
-      .register("/serviceWorker.js")
-      .then(res => console.log("Serviço Registrado"))
-      .catch(err => console.log("Serviço não registrado", err))
-  })
-}
