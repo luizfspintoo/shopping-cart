@@ -28,8 +28,8 @@ onValue(shoppingInDB, function (snaphot) {
     clearList()
     for (let i = 0; i < itemsArray.length; i++) {
       let currentItem = itemsArray[i]
-      let currentID = currentItem[0]
-      let currentValue = currentItem[1]
+      //let currentID = currentItem[0]
+      //let currentValue = currentItem[1]
       addItemList(currentItem)
     }
   } else {
@@ -55,7 +55,7 @@ function addItemList(item) {
 
   newItem.addEventListener("dblclick", function () {
     if (confirm("Deseja excluir este produto?") == true) {
-      alert("Item excluido com sucesso!")
+      alert("Produto excluido com sucesso!")
       let itemExactInDB = ref(database, `shoppingList/${itemID}`)
       remove(itemExactInDB)
     }
