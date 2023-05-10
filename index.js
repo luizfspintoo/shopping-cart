@@ -28,8 +28,6 @@ onValue(shoppingInDB, function (snaphot) {
     clearList()
     for (let i = 0; i < itemsArray.length; i++) {
       let currentItem = itemsArray[i]
-      //let currentID = currentItem[0]
-      //let currentValue = currentItem[1]
       addItemList(currentItem)
     }
   } else {
