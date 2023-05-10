@@ -9,7 +9,7 @@
 </p>
 
 ## Demo
-shoppingcart.lzfelipe.dev
+http://shoppingcart.lzfelipe.dev/
 
 ## 🚀 Tecnologias
 
